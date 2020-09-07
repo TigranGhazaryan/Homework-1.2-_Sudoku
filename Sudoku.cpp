@@ -80,6 +80,8 @@ bool Sudoku::solve()
 {
     int i{};
     int j{};
+    
+    //Base case
     if (!IsEmpty(i, j))
         return true;
 
@@ -91,11 +93,8 @@ bool Sudoku::solve()
             {
                 matrix[j][i] = e;
                 if (solve())
-                {
-                    //std::cout << ++backtrack << " ";
-                    return true;
-                }
-                // std::cout << ++backtrack << " ";
+                   return true;  
+                //Backtrack
                 matrix[j][i] = 0;
             }
         }
@@ -110,7 +109,8 @@ void Sudoku::print()
     for (int i = 0; i < 9; ++i)
     {
         for (int j = 0; j < 9; ++j)
-            std::cout << matrix[j][i] << " ";
+            //Updated the printing order (matrix [i][j] is the correct output)
+            std::cout << matrix[i][j] << " ";
         std::cout << "\n";
     };
 }
