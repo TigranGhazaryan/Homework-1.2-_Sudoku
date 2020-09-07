@@ -19,6 +19,4 @@ public:
     void enterDigits();
     bool solve();
     void print();
-
 };
-
