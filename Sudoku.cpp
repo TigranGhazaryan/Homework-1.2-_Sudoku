@@ -1,10 +1,9 @@
-#include "Class.h"
+#include "Sudoku.h"
 #include <iostream>
 
 //Constructor
-Sudoku::Sudoku(int Row, int Column) : row(Row), column(Column)
+Sudoku::Sudoku(int Row, int Column) : row(Row), column(Column), matrix(new int*[Row])
 {
-    matrix =  new int* [Row];
     for (int i = 0; i < Row; ++i)
         matrix[i] = new int[Column];
 }
@@ -12,7 +11,7 @@ Sudoku::Sudoku(int Row, int Column) : row(Row), column(Column)
 //Destructor
 Sudoku::~Sudoku()
 {
-    for (int i = 0; i < column; i++)
+    for (int i = 0; i < row; i++)
         delete[] matrix[i];
     delete[] matrix;
 };
