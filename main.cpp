@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Class.h"
+#include "Sudoku.h"
 
 int main()
 {
@@ -7,6 +7,4 @@ int main()
 	s.enterDigits();
 	s.solve();
 	s.print();
-	
-	
 }
